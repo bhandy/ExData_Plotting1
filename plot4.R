@@ -16,8 +16,8 @@ data <- read.csv("household_power_consumption.txt",
                                 "numeric", "numeric", "numeric", 
                                 "numeric", "numeric", "numeric"))
 data <- data.table(data)
-#data <- data[, dateTime := as.POSIXlt(paste(data$Date, data$Time), 
-#                                   format = "%d/%m/%Y %H:%M:%S")]
+
+
 data <- data[, dateTime := paste(data$Date, data$Time)]
 
 # R is getting mad if I just try to drop this into a new column in data[] - 
